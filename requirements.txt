@@ -1,0 +1,8 @@
+tensorflow-macos
+tensorflow-metal
+pandas
+numpy
+matplotlib
+keras
+wandb
+python-dotenv
