@@ -2,6 +2,12 @@ from typing import Tuple
 import keras
 
 def basic_cnn_sequential(input_size: Tuple[int, int], num_labels: int) -> keras.Sequential:
+    """
+    Create a basic CNN using the sequential API
+
+    Returns:
+        keras.Sequential: The basic CNN model
+    """
     model = keras.Sequential(
         layers=[
             keras.layers.Flatten(input_shape=input_size),
@@ -13,6 +19,12 @@ def basic_cnn_sequential(input_size: Tuple[int, int], num_labels: int) -> keras.
     return model
 
 def basic_cnn_functional(input_size: Tuple[int, int], num_labels: int) -> keras.Model:
+    """
+    Create a basic CNN using the functional API
+
+    Returns:
+        keras.Model: The basic CNN model
+    """
     inputs = keras.Input(shape=input_size)
     flattened = keras.layers.Flatten()(inputs)
     x = keras.layers.Dense(units=128, activation="relu")(flattened)
