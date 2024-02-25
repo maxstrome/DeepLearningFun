@@ -2,6 +2,8 @@ from typing import Optional
 
 import tensorflow as tf
 import keras
+
+from DeepLearningFun.definitions import TEMP_DIR
 from DeepLearningFun.tensorflowfun.dataset_processing.load_mnist_fashion import load_and_preprocess_dataset
 from DeepLearningFun.tensorflowfun.models.basic_cnn import basic_cnn_sequential, basic_cnn_functional
 import wandb
@@ -15,7 +17,7 @@ def train_basic_cnn(use_gpu: Optional[bool] = True):
         for device in visible_devices:
             assert device.device_type != 'GPU'
 
-    wandb.init(project='BasicMNISTCNN', entity='mstrome')
+    wandb.init(project='BasicMNISTCNN', entity='mstrome', dir=TEMP_DIR)
 
     (x_train, y_train), (x_test, y_test), class_names = load_and_preprocess_dataset()
     input_size = x_train[0].shape
