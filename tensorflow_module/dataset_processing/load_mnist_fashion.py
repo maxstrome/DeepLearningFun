@@ -9,6 +9,12 @@ from DeepLearningFun.tensorflow_module.helper_models import TrainTestDatasetMode
 
 
 def load_mnist_fashion() -> TrainTestDatasetModel:
+    """
+    Load the mnist fashion dataset as a TrainTestDatasetModel
+
+    Returns:
+        TrainTestDatasetModel: The fashion MNIST dataset
+    """
     (train_X, train_Y), (test_X, test_Y) = keras.datasets.fashion_mnist.load_data()
     class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                    'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
