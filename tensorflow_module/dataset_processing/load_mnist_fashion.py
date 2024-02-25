@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pydantic import BaseModel
 
-from DeepLearningFun.tensorflowfun.helper_models import TrainTestDatasetModel
+from DeepLearningFun.tensorflow_module.helper_models import TrainTestDatasetModel
 
 
 def load_mnist_fashion() -> TrainTestDatasetModel:

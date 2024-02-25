@@ -4,9 +4,9 @@ import tensorflow as tf
 import keras
 
 from DeepLearningFun.definitions import TEMP_DIR
-from DeepLearningFun.tensorflowfun.dataset_processing.load_mnist_fashion import load_and_preprocess_dataset
-from DeepLearningFun.tensorflowfun.helper_models import TrainTestDatasetModel
-from DeepLearningFun.tensorflowfun.models.basic_cnn import basic_cnn_sequential, basic_cnn_functional
+from DeepLearningFun.tensorflow_module.dataset_processing.load_mnist_fashion import load_and_preprocess_dataset
+from DeepLearningFun.tensorflow_module.helper_models import TrainTestDatasetModel
+from DeepLearningFun.tensorflow_module.models.basic_cnn import basic_cnn_sequential, basic_cnn_functional
 import wandb
 from wandb.keras import WandbCallback
 

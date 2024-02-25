@@ -4,7 +4,7 @@ import keras
 import matplotlib.pyplot as plt
 import numpy as np
 
-from DeepLearningFun.tensorflowfun.helper_models import TrainTestDatasetModel
+from DeepLearningFun.tensorflow_module.helper_models import TrainTestDatasetModel
 
 
 def basic_cnn_inference(model: keras.Model, test_images: np.ndarray):
