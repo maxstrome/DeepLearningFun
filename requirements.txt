@@ -1,5 +1,7 @@
 tensorflow-macos
 tensorflow-metal
+tensorflow_hub
+tensorflow-datasets
 pandas
 numpy
 matplotlib
