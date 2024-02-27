@@ -30,3 +30,15 @@ def basic_cnn_functional(input_size: Tuple[int, int], num_labels: int) -> keras.
     x = keras.layers.Dense(units=128, activation="relu")(flattened)
     outputs = keras.layers.Dense(units=num_labels, activation="linear")(x)
     return keras.Model(inputs=inputs, outputs=outputs)
+
+def actual_cnn(input_size: Tuple[int, int], num_labels: int) -> keras.Model:
+    inputs = keras.Input(shape=(input_size[0], input_size[1], 1))
+    x = keras.layers.Conv2D(filters=32, kernel_size=(5, 5), activation="relu")(inputs)
+    x = keras.layers.MaxPool2D(pool_size=(2, 2))(x)
+    x = keras.layers.Conv2D(filters=32, kernel_size=(3, 3), activation="relu")(x)
+    x = keras.layers.Flatten()(x)
+    x = keras.layers.Dropout(.5)(x)
+    x = keras.layers.Dense(units=64, activation="relu")(x)
+    outputs = keras.layers.Dense(units=num_labels, activation="linear")(x)
+    return keras.Model(inputs=inputs, outputs=outputs)
+
